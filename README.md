@@ -1,2 +1,15 @@
 # Pollution-Sensor
 Sample question of the preliminary stage of the Olympiad, planning the sensor to measure the amount of pollution in the refrigerator on the time vector and decontamination based on the blindness of the reduction of the collector performance. with the Python programming language
+
+
+## Question
+One of the environmental challenges is global warming. And greenhouse gases are one of the important factors in this field. In the past hundred years, the average air temperature near the surface of the earth has increased between .18 and .74 degrees Celsius. Household appliances such as refrigerators also produce greenhouse gas. Brena Home Appliances Company is recently producing a refrigerator-freezer, and its engineers need a sensor to record the amount of pollution produced by the refrigerator in order to determine the level of pollution. This sensor should be able to record the amount of pollution (positive or negative) at different times. Since the desired sensor may have problems in recording the amount of pollution, it should be possible to delete the entered data. The technical director of the company wants to write a program that can calculate the total amount of emissions produced from the beginning to the desired time at the desired time. In order to understand the technical problem, suppose a horizontal axis of integers and a vertical axis of real numbers, the horizontal axis of time And the vertical axis shows the amount of pollution at that moment, for example, the value (2,3) means that at time 2, the amount of pollution was equal to 3 units. On this axis, the three operations of add, delete, query are as follows:
+
+### The add operation (int time, float value):
+get two values, **time** and **value**, and adds the value to the axis at the time of time. `value!=0`. Be careful that the values of time and pollution can be negative. For example, it also has the add(-3,-2) function.
+
+### delete operation (int operation tim, int target):
+  It receives two values of operation time and target time, which neutralizes the value of operation time in target time, the value of target time is less than the value of operation time. That is, the delete operation can only affect its previous operation. For example, if we have an action delete(4,-3), it will delete an action in axis 4, and its function is to delete the action added at time -3. Note that the base of targettie is equal to -3 in the removal process.
+  
+### Query operation (int time):
+The output of this program is determined by operation. This operation receives the input parameter to the time parameter and returns the algebraic sum of the amount of emissions in the vertical axis from the beginning to the time. For example, if we execute query(3), we will get the answer 1.5, because at time -3, the value of -2 and at time 2, the value of 3.5 has been added to the axis, and their algebraic sum will be equal to 1.5. Pay attention that delete(-4,-3) has not been added at the time of query(3). Therefore, it has no effect on the output at time 3.
